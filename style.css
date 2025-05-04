@@ -1,0 +1,131 @@
+body {
+  font-family: 'Lato', sans-serif; /* Readable sans-serif for body */
+  background-color: #f4f4f4; /* Lighter grey background */
+  margin: 0;
+  padding: 0;
+  line-height: 1.6; /* Improve readability for body text */
+  color: #333; /* Default text color */
+}
+
+/* Add at the top of style.css if using Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:wght@400;700&display=swap');
+
+
+/* Style the navigation */
+nav {
+  background-color: #281a2d; /* Dark background for nav */
+  padding: 1em 0;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  padding: 5px 10px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+nav a:hover, nav a:focus {
+  background-color: #555; /* Hover effect for links */
+}
+
+/* Container for the cards - Adjusted for better centering and flow */
+/* Removed grid for a more traditional blog list layout */
+.blog-container {
+  max-width: 800px; /* Narrower max-width for a blog post column feel */
+  margin: 20px auto; /* Center the container */
+  padding: 0 15px;
+}
+
+
+/* Styling the cards - Adjusted for blog post look */
+.card {
+  background-color: #ffffff; /* White background for cards */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Softer shadow */
+  padding: 20px;
+  margin-bottom: 30px; /* More space between blog posts */
+  cursor: pointer; /* Indicate that the card is clickable */
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Smooth transition for hover */
+  overflow: hidden; /* Hide overflowing content in collapsed state */
+  position: relative; /* Needed for potential future absolute positioning if desired */
+}
+
+.card:hover {
+  transform: translateY(-5px); /* Lift card on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Enhance shadow on hover */
+}
+
+.card h1, .card h2 {
+  font-family: 'Merriweather', serif; /* Elegant serif for headings */
+  font-weight: 700; /* Bold headings */
+  color: #333; /* Darker heading color */
+  margin-top: 0; /* Remove default top margin */
+  border-bottom: 1px solid #eee; /* Subtle separator */
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+/* Style for the main blog post title card */
+.card h1 {
+    text-align: center; /* Center the main blog title */
+    border-bottom: none; /* Remove border for the main title */
+    padding-bottom: 0;
+    margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 16px; /* Comfortable reading size */
+  color: #555; /* Slightly lighter text color for paragraphs */
+  line-height: 1.6; /* Improve readability */
+  margin-bottom: 1em; /* Add space between paragraphs */
+  text-align: left; /* Ensure paragraph text aligns left */
+}
+
+/* Style lists within cards */
+.card ul {
+  list-style: disc; /* Standard bullets */
+  margin-left: 20px;
+  padding-left: 10px;
+  color: #555;
+  margin-bottom: 1em; /* Add space after lists */
+  text-align: left; /* Ensure list text aligns left */
+}
+
+.card ul li {
+  margin-bottom: 8px; /* Space out list items */
+}
+
+/* Style for the content that will be collapsed/expanded */
+.collapsible-content {
+    max-height: 150px; /* Set a max height for the collapsed state */
+    overflow: hidden; /* Hide content exceeding max height */
+    transition: max-height 0.5s ease-in-out; /* Smooth transition for expanding/collapsing */
+}
+
+/* Style for the expanded state */
+.collapsible-content.expanded {
+    max-height: 2000px; /* Set a large enough max height to show all content */
+}
+
+/* Removed the ::after pseudo-element for the arrow indicator */
+/* .card::after { ... } */
+/* .card.expanded::after { ... } */
+
+
+/* --- Q&A Section Styling (from previous response, integrated) --- */
+
+/* Style for the question text */
+/* .card h2 is already styled above, ensuring consistency */
+
+/* Style for the answer text */
+/* .card p is already styled above, ensuring consistency */
+
+/* If you want specific Q&A card styling, uncomment and use a class like .qa-card */
+/* .card.qa-card {
+  background-color: #e9e9e9;
+  border-left: 5px solid #281a2d;
+} */

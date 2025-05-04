@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Questions - National Today Calendar</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Add any specific styles for this page here if needed */
+    /* Styles for the search container */
+    .search-container {
+        text-align: center; /* Center the search bar content */
+        margin: 20px auto; /* Add some margin above and below and center the block */
+        max-width: 800px; /* Match the max-width of the cards for alignment */
+        padding: 0 15px; /* Add padding on smaller screens */
+    }
+
+    .search-container input[type="text"] {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+        width: 70%; /* Adjust width as needed, relative to its container */
+        box-sizing: border-box; /* Include padding and border in the element's total width */
+        margin-right: 5px; /* Space between input and button */
+        display: inline-block; /* Ensure it behaves like an inline element for text-align */
+        vertical-align: middle; /* Align with the button */
+    }
+
+    .search-container button {
+        padding: 10px 15px;
+        background-color: #281a2d; /* Match nav background */
+        color: white;
+        border: none;
+        border-radius: 4px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        display: inline-block; /* Ensure it behaves like an inline element for text-align */
+        vertical-align: middle; /* Align with the input */
+    }
+
+    .search-container button:hover {
+        background-color: #555; /* Hover effect */
+    }
+
+    /* Style for hidden cards */
+    .card.hidden {
+        display: none;
+    }
+
+    /* Style for the introductory text area */
+    .intro-text {
+        max-width: 800px; /* Match the max-width of the cards */
+        margin: 20px auto; /* Center the block */
+        padding: 0 15px; /* Add padding on smaller screens */
+        text-align: center; /* Center the text within the intro block */
+    }
+
+    .intro-text h1 {
+        font-family: 'Merriweather', serif; /* Elegant serif for headings */
+        font-weight: 700; /* Bold heading */
+        color: #333; /* Darker heading color */
+        margin-top: 0;
+        margin-bottom: 10px;
+    }
+
+    .intro-text p {
+        font-size: 16px; /* Comfortable reading size */
+        color: #555; /* Slightly lighter text color */
+        line-height: 1.6; /* Improve readability */
+        margin-bottom: 1em;
+    }
+
+
+    /* Ensure text within cards is centered as requested */
+    .card h2 {
+        text-align: center;
+    }
+
+    .card p {
+        text-align: center;
+    }
+
+    .card ul {
+        /* Keep list items left-aligned for readability within the centered block */
+        text-align: left;
+    }
+
+    /* Container for the actual question/answer cards */
+    .questions-list-container {
+        max-width: 800px; /* Match the max-width of the cards */
+        margin: 0 auto; /* Center the container */
+        padding: 0 15px; /* Add padding on smaller screens */
+    }
+
+
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="blog.html">Blog</a>
+    <a href="questions.html">Questions</a>
+    <a href="socials.html">Socials</a>
+    <a href="private_policy.html">Private Policy</a>
+  </nav>
+
+  <div class="intro-text">
+    <h1>Questions</h1>
+    <p>Have questions about National Days or our content? You're in the right place! Below are some common questions people search for related to our blog topics.</p>
+  </div>
+
+  <div class="search-container">
+      <input type="text" id="questions-search" placeholder="Search questions...">
+      <button onclick="filterQuestions()">Search</button>
+  </div>
+
+  <div class="questions-list-container">
+
+    <div class="card">
+      <h2>What is Cinco de Mayo and why is it celebrated?</h2>
+      <p>Cinco de Mayo commemorates the 1862 Mexican army victory against the French at the Battle of Puebla. While a minor holiday in Mexico, in the U.S. it has become a significant celebration of Mexican heritage and culture, marked with parties, parades, food, and drink.</p>
+    </div>
+    <div class="card">
+      <h2>What are traditional Cinco de Mayo foods and drinks?</h2>
+      <p>Traditional foods include items like mole poblano, carne asada for tacos, and tropical salsas. Popular drinks include margaritas, palomas, and nonalcoholic agua frescas.</p>
+    </div>
+    <div class="card">
+      <h2>Cinco de Mayo party ideas and decorations</h2>
+      <p>Party ideas include hosting a build-your-own taco bar, decorating with papel picado, sombreros, or a piñata, and creating a Cinco-themed playlist or movie night. Keep it simple and mobile-friendly with recipe cards, photo booths, or a shared music mix.</p>
+    </div>
+    <div class="card">
+      <h2>Is Cinco de Mayo Mexico's Independence Day?</h2>
+      <p>No, Cinco de Mayo is not Mexico's Independence Day. It commemorates the Battle of Puebla. Mexico's Independence Day is celebrated on September 16th.</p>
+    </div>
+    <div class="card">
+      <h2>Cinco de Mayo deals and restaurant specials near me</h2>
+      <p>Restaurants and bars often offer specials like discounted tacos or margarita deals. Checking local grill and Mexican-chain restaurants is recommended for potential promotions during Cinco de Mayo.</p>
+    </div>
+
+    <div class="card">
+      <h2>How did Star Wars change the film industry?</h2>
+      <p>Star Wars reshaped filmmaking by introducing groundbreaking special effects (via Industrial Light & Magic) and world-building, combining sci-fi with epic storytelling, and popularizing the modern movie tie-in industry (collectibles, comics, games).</p>
+    </div>
+    <div class="card">
+      <h2>What is the cultural impact of Star Wars?</h2>
+      <p>Star Wars became a global cultural phenomenon, seen as the "first modern mythology everyone embraced." Its iconic elements are recognized worldwide, and its fandom actively creates and engages with the universe.</p>
+    </div>
+    <div class="card">
+      <h2>Star Wars fandom and community</h2>
+      <p>The Star Wars fandom is a vibrant community that attends conventions, cosplay events, creates fan art and memes, and passes their love for the saga through generations. Star Wars Day (May 4) is a key event for fan celebration.</p>
+    </div>
+    <div class="card">
+      <h2>Iconic Star Wars quotes and characters</h2>
+      <p>Star Wars is known for iconic phrases like "May the Force be with you" and memorable characters that are recognized globally.</p>
+    </div>
+    <div class="card">
+      <h2>Star Wars Day (May 4th) celebration ideas</h2>
+      <p>Celebrate Star Wars Day by dressing up as characters, having movie marathons, making themed food (like "Yoda Soda" or "Wookie Cookies"), and sharing love for the saga online or with neighbors.</p>
+    </div>
+
+    <div class="card">
+      <h2>What is an Eastern Box Turtle?</h2>
+      <p>The Eastern Box Turtle ($Terrapene \text{carolina carolina}$) is a small terrestrial turtle found in the eastern U.S. It is one of four box turtle subspecies east of the Mississippi and the most common land turtle in that region.</p>
+    </div>
+    <div class="card">
+      <h2>Why are Eastern Box Turtles vulnerable?</h2>
+      <p>Despite being able to live up to 100 years, Eastern Box Turtle populations are declining due to habitat loss, roadkill, and the pet trade, leading to their listing as Vulnerable on the IUCN Red List.</p>
+    </div>
+    <div class="card">
+      <h2>How to help Eastern Box Turtle conservation</h2>
+      <p>Help by educating others about watching for turtles on roads, encouraging the building of wildlife crossings, leaving brush piles in gardens for refuge, creating turtle-friendly gardens, and donating to or volunteering with reptile rescue groups.</p>
+    </div>
+    <div class="card">
+      <h2>Eastern Box Turtle habitat and range</h2>
+      <p>Eastern Box Turtles are found throughout the eastern United States in various terrestrial habitats.</p>
+    </div>
+    <div class="card">
+      <h2>Eastern Box Turtle facts for kids</h2>
+      <p>Eastern Box Turtles can live for up to 100 years. They are important to the ecosystem, helping to control insects and disperse seeds. Finding one in the wild can be a delightful experience.</p>
+    </div>
+
+    <div class="card">
+      <h2>What is NAOSH Week?</h2>
+      <p>North American Occupational Safety and Health (NAOSH) Week is an annual event during the first full week of May, involving the U.S., Canada, and Mexico, to highlight workplace safety and health and renew commitments to accident prevention.</p>
+    </div>
+    <div class="card">
+      <h2>Importance of workplace safety and health</h2>
+      <p>Workplace safety matters because millions of workers face injury risks annually. NAOSH Week emphasizes that every injury is one too many. It’s an opportunity to remind workers that their lives matter beyond productivity – every safe practice shows employers value their people.</p>
+    </div>
+    <div class="card">
+      <h2>How to promote safety in the workplace</h2>
+      <p>Promote safety by conducting safety stand-downs, organizing training sessions on topics like first aid, displaying safety posters, publicly thanking employees for following protocols, and asking for employee feedback on safety improvements.</p>
+    </div>
+    <div class="card">
+      <h2>Workplace safety statistics and facts</h2>
+      <p>Approximately 3 in 100 full-time workers suffer a workplace injury each year, highlighting the ongoing need for safety awareness and prevention efforts.</p>
+    </div>
+    <div class="card">
+      <h2>Workplace safety tips for employees</h2>
+      <p>Employees can promote safety by keeping walkways clear, maintaining good posture, and reporting spills or other hazards.</p>
+    </div>
+
+    <div class="card">
+      <h2>When is National Wildflower Week?</h2>
+      <p>National Wildflower Week is celebrated during the first full week of May.</p>
+    </div>
+    <div class="card">
+      <h2>Benefits of wildflowers for mental health</h2>
+      <p>Connecting with wildflowers and nature through walks, photography, or journaling can have mental health benefits.</p>
+    </div>
+    <div class="card">
+      <h2>How to identify native wildflowers</h2>
+      <p>Local nature centers or botanical gardens often host special events like "Wildflower Walks" or guided hikes that can help with identification.</p>
+    </div>
+    <div class="card">
+      <h2>How to create a wildflower garden</h2>
+      <p>You can create a wildflower garden by planting native wildflower seeds, potentially in a park if permitted, or by creating a butterfly garden.</p>
+    </div>
+    <div class="card">
+      <h2>Wildflower conservation and importance</h2>
+      <p>Wildflowers are symbols of renewal and resilience and play a role in the ecosystem. Conservation efforts include planting native species and participating in community events.</p>
+    </div>
+
+    <div class="card">
+      <h2>When is National Nurses Week?</h2>
+      <p>National Nurses Week is celebrated during the first full week of May, culminating on National Nurses Day (May 6) and International Nurses Day (May 12).</p>
+    </div>
+    <div class="card">
+      <h2>National Nurses Day deals and freebies</h2>
+      <p>Many restaurants and brands offer deals for nurses, such as discounts at Outback Steakhouse or free coffee at Dunkin' on May 6th. Meal-kit services and retailers also often have promotions.</p>
+    </div>
+    <div class="card">
+      <h2>How to show appreciation for nurses</h2>
+      <p>Show gratitude by writing thank-you notes, creating gratitude boards, donating care packages to hospitals, sharing nurses' stories on social media, or using hashtags like #ThankANurse.</p>
+    </div>
+    <div class="card">
+      <h2>What is the history of National Nurses Week?</h2>
+      <p>The blog mentions National Nurses Week peaks on National Nurses Day (May 6) and includes International Nurses Day on May 12, honoring nurses' critical role in healthcare.</p>
+    </div>
+    <div class="card">
+      <h2>Self-care tips for nurses</h2>
+      <p>Nurses can practice self-care by taking short breaks, doing breathing exercises, enjoying healthy snacks or tea, using meditation apps, prioritizing nutritious meals, and utilizing peer support networks.</p>
+    </div>
+
+    <div class="card">
+      <h2>When is American Craft Beer Week?</h2>
+      <p>American Craft Beer Week is typically held during the second full week of May, marking the "Official Start of Beer Season".</p>
+    </div>
+    <div class="card">
+      <h2>Popular American craft beer styles</h2>
+      <p>Popular styles include Hazy/New England IPAs, American Amber or Red Ales, Imperial Stouts or Porters, Pilsners/Lagers, and Sour or Fruit Beers.</p>
+    </div>
+    <div class="card">
+      <h2>How to find local craft breweries</h2>
+      <p>Most Americans live within 10 miles of a craft brewery. You can visit local breweries or taprooms and look for the Independent Craft Brewer Seal.</p>
+    </div>
+    <div class="card">
+      <h2>Craft beer tasting guide for beginners</h2>
+      <p>For beginners, try ordering a flight of samples at a local brewery to taste a variety of styles. Pay attention to aromas and flavors like fruit, caramel, chocolate, or coffee.</p>
+    </div>
+    <div class="card">
+      <h2>Pairing food with craft beer</h2>
+      <p>Craft beers can be paired with various foods such as burgers, grilled vegetables, or cheese boards. Consider matching the beer's flavor profile with the food.</p>
+    </div>
+
+    <div class="card">
+      <h2>When is National Police Week?</h2>
+      <p>National Police Week is typically observed around the week that includes Peace Officers Memorial Day on May 15th (e.g., May 11–17, 2025).</p>
+    </div>
+    <div class="card">
+      <h2>How to show support for law enforcement during Police Week</h2>
+      <p>Show support by sending thank-you emails or notes to local precincts, pausing at 8 p.m. for the 8th honors, volunteering at police-affiliated community events, and posting #BackTheBlue selfies on social media.</p>
+    </div>
+    <div class="card">
+      <h2>National Police Week deals and discounts for officers</h2>
+      <p>Many businesses offer deals for officers, such as discounts from gear suppliers like OfficerStore and tactical brands, or discounts on meals from companies like Huel.</p>
+    </div>
+    <div class="card">
+      <h2>What is Peace Officers Memorial Day?</h2>
+      <p>Peace Officers Memorial Day falls on May 15th during National Police Week and honors law enforcement officers who have died in the line of duty.</p>
+    </div>
+    <div class="card">
+      <h2>Ceremonies and events for National Police Week</h2>
+      <p>Many police departments hold memorial events and "serve and remember" blood drives. Civilians can participate in candlelight vigils or attend local tributes.</p>
+    </div>
+
+    <div class="card">
+      <h2>What is National Silence the Shame Day?</h2>
+      <p>National Silence the Shame Day, observed on May 5th, encourages open discussion about mental health and combating stigma. Founded by a nonprofit organization, its theme (2024’s was “One Heart, Many Voices”) celebrates the power of sharing diverse experiences.</p>
+    </div>
+    <div class="card">
+      <h2>How to combat mental health stigma</h2>
+      <p>Combat stigma by having honest conversations about emotional well-being, attending mental health fairs or talks, becoming a "Mental Health Champion" by listening non judgmentally, and learning the signs of mental health challenges.</p>
+    </div>
+    <div class="card">
+      <h2>Mental health awareness activities</h2>
+      <p>Activities can include reaching out to someone for an honest conversation, hosting a "coffee and talk" about well-being, pausing for mental-health check-ins at work or school, or sharing anonymous notes or symbols to spark conversation.</p>
+    </div>
+    <div class="card">
+      <h2>Resources for mental health support</h2>
+      <p>Resources for mental health support can include hotline numbers, local counselors, and meditation apps. The blog emphasizes the importance of community and peer support.</p>
+    </div>
+    <div class="card">
+      <h2>How to talk openly about mental health</h2>
+      <p>Talking openly involves creating a supportive network and sharing diverse experiences. Becoming a "Mental Health Champion" and pledging to listen non judgmentally are ways to facilitate open conversations.</p>
+    </div>
+
+    <div class="card">
+      <h2>When is National Astronaut Day?</h2>
+      <p>National Astronaut Day is celebrated on May 5th.</p>
+    </div>
+    <div class="card">
+      <h2>Celebrating National Astronaut Day</h2>
+      <p>Celebrate by watching or attending space-related events, visiting museums or planetariums, watching live rocket launches online, hosting astronaut trivia nights, or having a space-themed movie marathon.</p>
+    </div>
+    <div class="card">
+      <h2>First American in space</h2>
+      <p>National Astronaut Day commemorates Alan Shepard's historic suborbital flight on May 5, 1961, making him the first American in space.</p>
+    </div>
+    <div class="card">
+      <h2>Fun facts about astronauts and space</h2>
+      <p>Alan Shepard's first flight lasted 15 minutes and reached 116 miles up. Space agencies like NASA often share special images and updates on social media.</p>
+    </div>
+    <div class="card">
+      <h2>How to become an astronaut</h2>
+      <p>While the blog doesn't detail how to become an astronaut, it celebrates those who push boundaries and encourages dreaming big, suggesting symbolic actions like writing down personal goals inspired by the day's theme.</p>
+    </div>
+
+    <div class="card">
+      <h2>National Hoagie Day – Best Hoagie Deals and Origins of the Food</h2>
+      <p>National Hoagie Day is celebrated on May 5 (the same day as Cinco!). It honors the classic hoagie sandwich – known as a sub, hero, or grinder elsewhere. Its origin story is typically tied to Philadelphia’s Hog Island shipyard around 1953, where Italian immigrants packed long rolls filled with meats, cheese, and veggies.</p>
+    </div>
+    <div class="card">
+      <h2>Origin of the hoagie sandwich</h2>
+      <p>The hoagie's origin story is typically tied to Philadelphia's Hog Island shipyard around 1953, where Italian immigrants made long rolls filled with meats, cheese, and vegetables.</p>
+    </div>
+    <div class="card">
+      <h2>Best hoagie recipes to make at home</h2>
+      <p>You can make a hoagie at home by using fresh hoagie rolls, sliced Italian deli meats (salami, capicola, ham, roast beef), provolone or mozzarella cheese, and a variety of toppings like lettuce, tomato, onion, peppers, pickles, and olives.</p>
+    </div>
+    <div class="card">
+      <h2>Hoagie vs sub vs hero vs grinder</h2>
+      <p>The hoagie is a classic sandwich known by different names in other regions, such as sub, hero, or grinder.</p>
+    </div>
+    <div class="card">
+      <h2>National Hoagie Day deals and specials</h2>
+      <p>While there are no standardized nationwide promotions, many local delis and sandwich shops may offer specials for National Hoagie Day. Checking nearby delis or supermarket delis is recommended.</p>
+    </div>
+
+    <div class="card">
+      <h2>National Foster Care Day – Building Connection and Trust with Foster Children</h2>
+      <p>National Foster Care Day (May 6, 2025) draws attention to children in foster care and those who care for them. It reminds us that “every child deserves care, respect, and a chance to feel secure”.</p>
+    </div>
+    <div class="card">
+      <h2>How to build trust with foster children</h2>
+      <p>Building trust with foster children involves consistency and routine, patience and empathy, open communication, respecting their boundaries, providing a safe and nurturing environment, and consistent positive one-on-one interactions.</p>
+    </div>
+    <div class="card">
+      <h2>How to support children in foster care</h2>
+      <p>Support can be provided by becoming a CASA volunteer, donating items, or participating in community support initiatives.</p>
+    </div>
+    <div class="card">
+      <h2>Becoming a foster parent requirements</h2>
+      <p>While the blog doesn't detail specific requirements, it implies that becoming a foster parent involves providing care, respect, and a secure environment for children.</p>
+    </div>
+    <div class="card">
+      <h2>What is the role of a CASA volunteer?</h2>
+      <p>A CASA volunteer (Court Appointed Special Advocate) is mentioned as a way to provide community support for children in foster care, advocating for their best interests.</p>
+    </div>
+
+    <div class="card">
+      <h2>National Teacher Appreciation Day – Top Teacher Deals and Gratitude Gestures</h2>
+      <p>National Teacher Appreciation Week is the first week of May (May 5–9, 2025), with Teacher Appreciation Day on May 7. It’s a time to honor educators’ vital role.</p>
+    </div>
+    <div class="card">
+      <h2>Teacher Appreciation Day deals and discounts</h2>
+      <p>Many businesses offer discounts for teachers, such as 20% off meals at Buffalo Wild Wings or rewards on purchases at office supply stores like Office Depot/OfficeMax.</p>
+    </div>
+    <div class="card">
+      <h2>Best ways to thank a teacher</h2>
+      <p>Heartfelt ways to thank a teacher include handwritten notes from students, donating supplies to the classroom, volunteering time, organizing public acknowledgments like banners or social media posts, or hosting a collective celebration like a teacher breakfast.</p>
+    </div>
+    <div class="card">
+      <h2>Gift ideas for Teacher Appreciation Week</h2>
+      <p>Gift ideas can range from simple handwritten notes and drawings to classroom supply donations, books, snacks, or even organizing a collective gift or event.</p>
+    </div>
+    <div class="card">
+      <h2>Importance of teachers in education</h2>
+      <p>Teacher Appreciation Week is a time to honor educators for their vital role in education and for making a difference in students' lives.</p>
+    </div>
+
+    <div class="card">
+      <h2>National Nurse Day – Self-Care, Wellness Ideas, and National Offers</h2>
+      <p>May 6, 2025 is National Nurse Day (kickoff of National Nurses Week). This day highlights nurses’ own well-being.</p>
+    </div>
+    <div class="card">
+      <h2>Self-care tips for nurses</h2>
+      <p>Encourage nurses to practice self-care on their special day: take a short break for a walk or a few deep breaths between shifts, enjoy a healthy snack or quiet cup of tea, and acknowledge the emotional toll of the job. Suggest wellness ideas:
+        <ul>
+          <li>Mindfulness: Use a free meditation app for a quick relaxation session.</li>
+          <li>Physical Care: Swap one meal for a nutritious, high-protein option to rebuild energy.</li>
+          <li>Support Networks: Call a fellow nurse to share a laugh or vent – peer support is powerful.</li>
+        </ul>
+      </p>
+    </div>
+    <div class="card">
+      <h2>National Nurse Day freebies and offers</h2>
+      <p>Some brands specifically target May 6th with offers for nurses, such as free medium coffee at Dunkin', or free baked goods at places like Insomnia Cookies and Cinnabon in past years.</p>
+    </div>
+    <div class="card">
+      <h2>Wellness ideas for healthcare professionals</h2>
+      <p>Wellness ideas include mindfulness exercises, focusing on physical care through nutrition, and building strong support networks with colleagues.</p>
+    </div>
+    <div class="card">
+      <h2>How to celebrate National Nurse Day</h2>
+      <p>National Nurse Day is about acknowledging the hard work and dedication of nurses and reminding them that they deserve care too, encouraging them to use deals and freebies as small treats.</p>
+    </div>
+
+    <div class="card">
+      <h2>National Have a Coke Day – Creative Ways to Celebrate and Fun Coke Facts</h2>
+      <p>May 8, 2025 is National Have a Coke Day, a lighthearted holiday to enjoy Coca-Cola. Coca-Cola has an iconic place in American and global culture – its “I’d like to buy the world a Coke” ad and theme song from 1971 still resonate today.</p>
+    </div>
+    <div class="card">
+      <h2>Creative ways to celebrate National Have a Coke Day</h2>
+      <p>Celebrate by enjoying a Coca-Cola, hosting a Coke tasting party with different varieties, trying Coke mixology (for adults), or sharing Coke Day stories and photos with friends.</p>
+    </div>
+    <div class="card">
+      <h2>Fun facts about Coca-Cola history</h2>
+      <p>Coca-Cola started in 1886 as a medicinal tonic, once even containing a bit of cocaine. Today it’s the world’s biggest soft drink brand – a true example of “commercial diplomacy” (Americans exporting culture by sharing a Coke). The Coca-Cola bottle design is iconic (note the day the contour bottle debuted in 1916).</p>
+    </div>
+    <div class="card">
+      <h2>Coca-Cola flavors available</h2>
+      <p>Available Coca-Cola varieties include Classic, Diet, Zero, Cherry, and Vanilla Coke.</p>
+    </div>
+    <div class="card">
+      <h2>Coca-Cola in pop culture</h2>
+      <p>Coca-Cola has an iconic place in culture, known for campaigns like the "I'd like to buy the world a Coke" ad and theme song, representing "commercial diplomacy."</p>
+    </div>
+
+    <div class="card">
+      <h2>World Cup 2025 – Today’s Predictions, Match Insight, and Fan Engagement</h2>
+      <p>The 2025 FIFA Club World Cup (June 15–July 13, 2025) will be a first-of-its-kind 32-team tournament in the USA. It features continental champions from Europe, South America, and beyond, grouped into eight groups of four. Heavyweights include Real Madrid, Manchester City, Bayern Munich (UEFA) and top clubs like Flamengo, Palmeiras (CONMEBOL).</p>
+    </div>
+    <div class="card">
+      <h2>Match Insight</h2>
+      <p>Fans should watch for local heroes – for example, Major League Soccer’s Seattle Sounders are in Group A alongside Al Ahly (Egypt) and others. Tactically, expect exciting play: European teams often emphasize possession and set-piece strength, while South American clubs bring flair and skill.</p>
+    </div>
+    <div class="card">
+      <h2>Fan Engagement</h2>
+      <p>Encourage readers to get involved: purchase tickets early for key matches (if feasible), join watch parties at local sports bars, or organize a soccer match of your own (kids vs. parents, or a local club mini-tourney). Real Madrid fans can take advantage of special travel packages (as sold by resorts like Westgate Orlando).</p>
+    </div>
+    <div class="card">
+      <h2>Cultural Relevance</h2>
+      <p>Frame this as a global festival – more than a competition, it’s a meeting of styles and cultures. Local restaurants can join in (e.g. a Mexico restaurant sponsoring a Palmeiras viewing). Fans might host international-themed potlucks representing the clubs.</p>
+    </div>
+    <div class="card">
+      <h2>FIFA Club World Cup 2025 format</h2>
+      <p>The tournament features 32 teams grouped into eight groups of four.</p>
+    </div>
+
+    <div class="card">
+      <h2>Star Wars Day (May 4) – Best Deals and How Fans Can Celebrate in Style</h2>
+      <p>“May the Fourth be with you!” fans worldwide celebrate Star Wars Day on May 4. This fan-created holiday is now officially observed by Star Wars media and major retailers.</p>
+    </div>
+    <div class="card">
+      <h2>Star Wars Day merchandise sales and deals</h2>
+      <p>Expect sales on Star Wars merchandise – past years saw discounts on lightsabers, LEGO sets, costumes and video games. For instance, specialty stores like ThinkGeek/GameStop often run “May the 4th” sales (GameStop offered deals on games and figures in 2024). Disney’s StarWars.com usually publishes a list of promotions.</p>
+    </div>
+    <div class="card">
+      <h2>How to celebrate Star Wars Day (May the 4th)</h2>
+      <p>Celebrate by dressing up as characters, throwing themed parties, having Star Wars movie marathons, making themed food (like "Yoda Soda" or "Wookie Cookies"), and sharing messages like "May the Fourth" in creative ways.</p>
+    </div>
+    <div class="card">
+      <h2>Best Star Wars movies to watch on Star Wars Day</h2>
+      <p>Classic ways to celebrate include watching all the Star Wars episodes or binge-watching a specific trilogy.</p>
+    </div>
+    <div class="card">
+      <h2>History of "May the Fourth be with you"</h2>
+      <p>The phrase "May the Fourth be with you" is a pun on the iconic Star Wars line "May the Force be with you" and became the basis for the fan-created holiday.</p>
+    </div>
+
+    <div class="card">
+      <h2>Is Real Madrid playing in the 2025 Club World Cup?</h2>
+      <p>Yes, Real Madrid, as the winner of the 2023–24 UEFA Champions League, will likely be one of Europe's representatives in the 2025 FIFA Club World Cup.</p>
+    </div>
+    <div class="card">
+      <h2>Real Madrid fan events and watch parties in the USA</h2>
+      <p>Real Madrid fans in the U.S. can look for Real-focused events tied to the tournament, including potential watch parties at bars or sports clubs, possibly paired with World Cup screenings.</p>
+    </div>
+    <div class="card">
+      <h2>How to watch Real Madrid in the Club World Cup</h2>
+      <p>You can watch Real Madrid in the Club World Cup by potentially attending matches with special travel packages, or by finding watch parties at local bars or sports clubs.</p>
+    </div>
+    <div class="card">
+      <h2>Real Madrid's chances in the 2025 Club World Cup</h2>
+      <p>As a globally beloved club and recent UEFA Champions League winner, Real Madrid is expected to be a strong contender in the 2025 Club World Cup.</p>
+    </div>
+    <div class="card">
+      <h2>Real Madrid travel packages for the Club World Cup USA</h2>
+      <p>Some resorts, like Westgate Lakes in Orlando, have advertised special Real Madrid fan packages for the World Cup, bundling hotel and ticket options.</p>
+    </div>
+
+    <div class="card">
+      <h2>When is the F1 Miami Grand Prix 2025?</h2>
+      <p>The 2025 F1 Miami Grand Prix will be held from May 2nd to May 4th, 2025.</p>
+    </div>
+    <div class="card">
+      <h2>F1 Miami Grand Prix 2025 schedule</h2>
+      <p>The weekend includes Free Practice sessions on Friday (May 2), Final Practice and Qualifying followed by a Sprint race on Saturday (May 3), and the main Grand Prix race on Sunday (May 4).</p>
+    </div>
+    <div class="card">
+      <h2>How to watch F1 Miami Grand Prix</h2>
+      <p>You can watch the F1 Miami Grand Prix on TV or streaming services that cover F1 in the U.S., such as ESPN.</p>
+    </div>
+    <div class="card">
+      <h2>Tips for attending the F1 Miami Grand Prix</h2>
+      <p>If attending, arrive early due to potential traffic, and bring essentials like sunscreen, a refillable water bottle, and ear protection due to the loud cars. Explore fan zones for interactive experiences.</p>
+    </div>
+    <div class="card">
+      <h2>What is an F1 Sprint race?</h2>
+      <p>An F1 Sprint race, held on Saturday, is a shorter race (about 100 km) that awards points to the top 8 finishers and helps set the grid for the main race.</p>
+    </div>
+
+    <div class="card">
+      <h2>Major events happening in May 2025</h2>
+      <p>May 2025 includes major events and observances such as the Kentucky Derby, Mother's Day, Asian American and Pacific Islander Heritage Month, Mental Health Awareness Month, National Travel and Tourism Week, Armed Forces Day, Memorial Day, and National Bike Month.</p>
+    </div>
+    <div class="card">
+      <h2>How to celebrate Mother's Day</h2>
+      <p>Celebrate Mother's Day by honoring moms or mother figures with activities like brunches, family walks or hikes, homemade cards, or breakfast in bed.</p>
+    </div>
+    <div class="card">
+      <h2>What is Asian American and Pacific Islander Heritage Month?</h2>
+      <p>Asian American and Pacific Islander Heritage Month is observed throughout May to celebrate AAPI culture, which can include sharing recipes, attending cultural fairs, and supporting AAPI artists.</p>
+    </div>
+    <div class="card">
+      <h2>Activities for Mental Health Awareness Month</h2>
+      <p>Incorporate self-care into your routine with small daily habits like short walks, digital detox evenings, or gratitude journaling. The month encourages awareness and prioritizing well-being.</p>
+    </div>
+    <div class="card">
+      <h2>How to observe Memorial Day</h2>
+      <p>Observe Memorial Day, on May 26th, by honoring veterans and fallen service members, which can include quiet remembrance or displaying flags at half-staff.</p>
+    </div>
+
+  </div>
+
+  <script>
+    // Function to filter question/answer cards based on search input
+    function filterQuestions() {
+        const searchInput = document.getElementById('questions-search');
+        const filter = searchInput.value.toLowerCase(); // Get search term and convert to lowercase
+        const questionsListContainer = document.querySelector('.questions-list-container'); // Get the container for Q&A cards
+        const cards = questionsListContainer.querySelectorAll('.card'); // Get all cards within the container
+
+        cards.forEach(card => {
+            const question = card.querySelector('h2') ? card.querySelector('h2').textContent.toLowerCase() : ''; // Get question text or empty string
+            const answer = card.querySelector('p') ? card.querySelector('p').textContent.toLowerCase() : ''; // Get answer text or empty string
+
+            // Check if the search term is in the question or answer
+            if (question.includes(filter) || answer.includes(filter)) {
+                card.classList.remove('hidden'); // Show the card
+            } else {
+                card.classList.add('hidden'); // Hide the card
+            }
+        });
+    }
+
+    // Optional: Add event listener to trigger search on Enter key press
+    document.getElementById('questions-search').addEventListener('keypress', function(event) {
+        if (event.key === 'Enter') {
+            filterQuestions();
+        }
+    });
+
+  </script>
+
+</body>
+</html>
