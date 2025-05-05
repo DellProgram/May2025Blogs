@@ -110,7 +110,26 @@ nav a:hover, nav a:focus {
 .collapsible-content.expanded {
     max-height: 2000px; /* Set a large enough max height to show all content */
 }
+#backToTopBtn {
+  display: none; /* Hidden by default */
+  position: fixed; /* Fixed/sticky position */
+  bottom: 20px; /* Place the button 20px from the bottom */
+  right: 30px; /* Place the button 30px from the right */
+  z-index: 99; /* Make sure it does not overlap other elements */
+  border: none; /* Remove borders */
+  outline: none; /* Remove outline */
+  background-color: #555; /* Set a background color (adjust as needed) */
+  color: white; /* Text color */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  padding: 15px; /* Some padding */
+  border-radius: 10px; /* Rounded corners */
+  font-size: 18px; /* Increase font size */
+  transition: background-color 0.3s ease; /* Smooth transition for hover */
+}
 
+#backToTopBtn:hover {
+  background-color: #281a2d; /* Add a darker background on hover (match nav color) */
+}
 /* Removed the ::after pseudo-element for the arrow indicator */
 /* .card::after { ... } */
 /* .card.expanded::after { ... } */
